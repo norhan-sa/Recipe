@@ -37,9 +37,10 @@ import 'package:flutter/material.dart';
             child: Padding(
               padding: EdgeInsets.fromLTRB(25, 30, 25, 0),
               child: Column(
-                 crossAxisAlignment: CrossAxisAlignment.start,
+                 crossAxisAlignment: CrossAxisAlignment.stretch,
                  children: <Widget>[
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,10 +69,7 @@ import 'package:flutter/material.dart';
                           ]
                         ),
 
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(45, 0, 0, 5),
-                          child: Image.asset('images/Logo.png'),
-                        )
+                        Image.asset('images/Logo.png'),
                       ]
                     ),
                     SizedBox(height: 65.0),
@@ -104,9 +102,7 @@ import 'package:flutter/material.dart';
 
                     SizedBox(height: 30.0),
                     
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0,0, 0, 0),
-                      child: TextField(
+                    TextField(
                          style: TextStyle(
                              color: Colors.white,
                          ),  
@@ -129,19 +125,20 @@ import 'package:flutter/material.dart';
                               ),
                        ),   
                     ),
-                  ),
 
-                  Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(184, 0, 0, 0) ,
-                      child: FlatButton(onPressed: null,
-                        child: Text(
-                          'forger password?',
-                          style: TextStyle(  
-                            fontSize: 12,
-                            color: Colors.white,  
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        FlatButton(onPressed: null,
+                          child: Text(
+                            'forger password?',
+                            style: TextStyle(  
+                              fontSize: 12,
+                              color: Colors.white,  
+                           ),
+                         ),
                        ),
-                      ),
-                     )
+                      ]
                     ),
 
                     RaisedButton(
@@ -163,15 +160,15 @@ import 'package:flutter/material.dart';
                        disabledColor: Colors.white,
                        splashColor: disable,
                        color: disable,
-                      //  colorBrightness: Brightness.light ,
-                       padding: EdgeInsetsDirectional.fromSTEB(130, 13, 130, 13),
+                       padding: EdgeInsetsDirectional.fromSTEB(0, 13, 0, 13),
                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
                        ),
                     ),
 
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(120, 15, 0, 0),
+                    SizedBox(height: 15),
+
+                    Center(
                       child: Text(
                         'Login with',
                         style: TextStyle(
@@ -181,39 +178,35 @@ import 'package:flutter/material.dart';
                         ),
                       ),
                     ),
+
+                    SizedBox(height: 15),
                      
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(50, 0, 0, 0),
-                          child: RaisedButton(
-                            onPressed: null,
-                            disabledColor: Color(0xFF3B5999),
-                            shape: RoundedRectangleBorder(
-                               borderRadius: BorderRadius.circular(10.0),
-                            ),
-                            child: Image.asset('images/f.png'), 
+                        RaisedButton(
+                          onPressed: null,
+                          disabledColor: Color(0xFF3B5999),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
                           ),
+                          child: Image.asset('images/f.png'), 
                         ),
 
                         SizedBox(width: 30),
 
-                        Padding(
-                          padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
-                          child: RaisedButton(
-                            onPressed: null,
-                            disabledColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                               borderRadius: BorderRadius.circular(14.0),
-                            ),
-                            child: Image.asset('images/googleIcon.png'), 
+                        RaisedButton(
+                          onPressed: null,
+                          disabledColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14.0),
                           ),
-                       ),
+                          child: Image.asset('images/googleIcon.png'), 
+                        ),
                       ]
                     ), 
 
-                    Padding(
-                      padding: EdgeInsets.fromLTRB(150, 5, 0, 5),
+                    Center(
                       child: Text('or',
                         style: TextStyle(
                           color: Colors.white,
@@ -221,9 +214,11 @@ import 'package:flutter/material.dart';
                           fontSize: 14.0,
                         ),
                       ),
-                    ),  
+                    ), 
 
-                   RaisedButton(
+                    SizedBox(height: 15), 
+
+                    RaisedButton(
                        onPressed: null,
                        child: Text('Create an account',
                           style: TextStyle(
@@ -235,7 +230,7 @@ import 'package:flutter/material.dart';
                        highlightElevation: 8.5,
                        disabledColor: Colors.green,
                        colorBrightness: Brightness.light ,
-                       padding: EdgeInsetsDirectional.fromSTEB(85, 15, 85, 15),
+                       padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 15),
                        shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
                        ),
