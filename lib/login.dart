@@ -155,8 +155,6 @@ import 'package:flutter/material.dart';
                              color: enable,
                           ),
                        ),
-
-                       highlightElevation: 8.5,
                        disabledColor: Colors.white,
                        splashColor: disable,
                        color: disable,

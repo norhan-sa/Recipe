@@ -6,7 +6,7 @@ import 'package:recipe_app/profile.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Login()
+    home: Profile()
    )
   );
 }

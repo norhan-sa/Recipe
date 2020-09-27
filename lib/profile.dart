@@ -16,9 +16,11 @@ class _ProfileState extends State<Profile> {
         child: Column(
           children: <Widget>[
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                  Padding(
-                   padding: EdgeInsets.fromLTRB(20, 40, 0, 0),
+                   padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
                    child: Text(
                      'Welcom $name',
                      style: TextStyle(
@@ -30,20 +32,21 @@ class _ProfileState extends State<Profile> {
                    ),
                  ),
 
-                 Padding(padding: EdgeInsets.fromLTRB(125, 40, 0, 5), 
-                 child: CircleAvatar(
+                 Padding(
+                   padding: EdgeInsets.fromLTRB(0, 15, 20, 10),
+                   child:CircleAvatar(
                    backgroundImage: AssetImage('images/Avatar.png'),
                    maxRadius: 25,
                    minRadius: 25,
-                 )),
+                 ),
+                 )
               ],
             ),
 
             SizedBox(height: 25),
 
-            Container(
-              height: 495.0,
-              width: double.infinity,
+            Expanded(
+              child:  Container(
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -93,6 +96,7 @@ class _ProfileState extends State<Profile> {
                  ) 
                 ]
               ),
+            ),
             ),
           ]
         )
