@@ -53,7 +53,6 @@ class _ProfileState extends State<Profile> {
                   topLeft: Radius.circular(35),
                   topRight: Radius.circular(35),
                 ),
-                
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey[200].withOpacity(0.8),
@@ -62,12 +61,13 @@ class _ProfileState extends State<Profile> {
                   ),
                 ],
               ),
-
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Padding(
-                   padding: EdgeInsets.fromLTRB(40, 50, 0, 0), 
+                   padding: EdgeInsets.fromLTRB(0, 50, 0, 0), 
                    child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween, 
                     children: <Widget>[
                       RaisedButton(
                           onPressed: null, 
@@ -90,10 +90,129 @@ class _ProfileState extends State<Profile> {
                                 ),
                               ]
                             ),
+                        ),
+
+                        RaisedButton(
+                          onPressed: null, 
+                          color: Colors.grey,
+                          elevation: 20.0,
+                          disabledColor: Colors.white,
+                          padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)
                           ),
+                          child: Column(
+                              children: <Widget>[
+                                Image.asset('images/messages.png'),
+                                SizedBox(height: 10),
+                                Text('Chats',
+                                  style: TextStyle(
+                                    color: Color(0xFF82C6E6),
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ]
+                            ),
+                        ),
+
+                          RaisedButton(
+                          onPressed: null, 
+                          color: Colors.grey,
+                          elevation: 20.0,
+                          disabledColor: Colors.white,
+                          padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)
+                          ),
+                          child: Column(
+                              children: <Widget>[
+                                Image.asset('images/global.png'),
+                                SizedBox(height: 10),
+                                Text('Networks',
+                                  style: TextStyle(
+                                    color: Color(0xFF79C8A6),
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ]
+                            ),
+                        ),
                     ]
                   ),
-                 ) 
+                 ),
+                 Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+                    children: <Widget>[
+                      RaisedButton(
+                          onPressed: null, 
+                          color: Colors.grey,
+                          elevation: 20.0,
+                          disabledColor: Colors.white,
+                          padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)
+                          ),
+                          child: Column(
+                              children: <Widget>[
+                                Image.asset('images/friends.png'),
+                                SizedBox(height: 10),
+                                Text('Friends',
+                                  style: TextStyle(
+                                    color: Color(0xFF096B91),
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ]
+                            ),
+                        ),
+
+                        RaisedButton(
+                          onPressed: null, 
+                          color: Colors.grey,
+                          elevation: 20.0,
+                          disabledColor: Colors.white,
+                          padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)
+                          ),
+                          child: Column(
+                              children: <Widget>[
+                                Image.asset('images/love.png'),
+                                SizedBox(height: 10),
+                                Text('Favourites',
+                                  style: TextStyle(
+                                    color: Color(0xFF82C6E6),
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ]
+                            ),
+                        ),
+
+                          RaisedButton(
+                          onPressed: null, 
+                          color: Colors.grey,
+                          elevation: 20.0,
+                          disabledColor: Colors.white,
+                          padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)
+                          ),
+                          child: Column(
+                              children: <Widget>[
+                                Image.asset('images/upload.png'),
+                                SizedBox(height: 10),
+                                Text('Uploads',
+                                  style: TextStyle(
+                                    color: Color(0xFF79C8A6),
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ]
+                            ),
+                        ),
+                    ]
+                  ),
                 ]
               ),
             ),
