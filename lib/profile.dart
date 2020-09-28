@@ -13,6 +13,9 @@ class _ProfileState extends State<Profile> {
     Notifications(content: 'Adebayo Apercu sent you a message', date: 'Yesterday'),
     Notifications(content: 'Oladele Tamilore replied your message', date: 'Monday 22 October'),
     Notifications(content: '20 people added your recipe as a favourite', date: 'Friday 19 October'),
+    Notifications(content: 'Adebayo Apercu sent you a message', date: 'Yesterday'),
+    Notifications(content: 'Oladele Tamilore replied your message', date: 'Monday 22 October'),
+    Notifications(content: '20 people added your recipe as a favourite', date: 'Friday 19 October'),    
   ];
 
   Widget wrapNotification(notification){
@@ -88,8 +91,9 @@ class _ProfileState extends State<Profile> {
 
             SizedBox(height: 25),
 
-            Expanded(
-              child:  Container(
+            // Expanded(
+            //   child:  
+            Container(
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -105,7 +109,6 @@ class _ProfileState extends State<Profile> {
                 ],
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Padding(
                    padding: EdgeInsets.fromLTRB(20, 50, 20, 0), 
@@ -272,54 +275,79 @@ class _ProfileState extends State<Profile> {
                   ),
                  ),
 
-                 SizedBox(height: 40),
+                 SizedBox(height: 30),
 
-                 Divider(
-                   height: 5.0,
-                   color: Colors.grey[200],
-                 ),
+                 Expanded(
+                   child: Container(
+                     color: Colors.red,
+                     child: ListView(
+                       children: [
+                          Divider(
+                            height: 5.0,
+                            color: Colors.grey[200],
+                          ),
 
-                 Padding(
-                   padding: EdgeInsets.fromLTRB(20, 1, 15, 1),
-                   child: Row(
-                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                     children: <Widget>[
-                       Text(
-                         'Notifications',
-                         style: TextStyle(
-                           color: Colors.green,
-                           fontSize: 16,
-                           fontWeight: FontWeight.bold
-                         ),
-                       ),
-                       
-                       FlatButton(
-                         onPressed: (){
-                           print('Hello');
-                         },                         
-                         child: Text(
-                           'Clear notifications',
-                           style: TextStyle(
-                             fontSize: 12,
-                             fontWeight: FontWeight.bold,
-                             color: Color(0xFFB4C2D3)
-                           ),
-                         ),
-                       ),
-                     ]
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                Text(
+                                  'Notifications',
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold
+                                  ),
+                                ),
+
+                                Material(
+                                  child: InkWell(
+                                  onTap: (){
+                                    print('Hello');
+                                  },
+                                  splashColor: Colors.grey,
+                                  child: Container(
+                                    width: 100,
+                                    height: 18,
+                                    decoration: BoxDecoration(
+                                      border: Border(
+                                        bottom: BorderSide(
+                                          color: Color(0xFFE7EAEC),
+                                          width: 2,
+                                        ),
+                                      ),
+                                    ),
+                                    child: Text(
+                                        'Clear notifications',
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xFFB4C2D3)
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                  ),
+                                ),
+                                ),
+                              ]
+                            ),
+                          ),
+
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                            child: Column(
+                                children: notifications.map((e) => wrapNotification(e)).toList(), 
+                            ),
+                          )
+                       ],
+                     ),
                    ),
-                 ),
-
-                 Padding(
-                   padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-                   child: Column(
-                      children: notifications.map((e) => wrapNotification(e)).toList(), 
-                   ),
-                 )
+                 ),  
                 ]
               ),
             ),
-            ),
+            // ),
           ]
         )
       )

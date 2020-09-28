@@ -129,7 +129,11 @@ import 'package:flutter/material.dart';
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
-                        FlatButton(onPressed: null,
+                        FlatButton(
+                          onPressed: (){
+                            print('jj');
+                          },
+                          padding: EdgeInsets.all(0),
                           child: Text(
                             'forger password?',
                             style: TextStyle(  
