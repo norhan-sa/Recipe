@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './notifications.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -7,7 +8,49 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
 
-  String name = "Daviad";
+  String name = "David";
+  List<Notifications> notifications  = [
+    Notifications(content: 'Adebayo Apercu sent you a message', date: 'Yesterday'),
+    Notifications(content: 'Oladele Tamilore replied your message', date: 'Monday 22 October'),
+    Notifications(content: '20 people added your recipe as a favourite', date: 'Friday 19 October'),
+  ];
+
+  Widget wrapNotification(notification){
+      return Container(
+        margin: EdgeInsets.all(5),
+        color: Colors.white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              notification.content,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 14,
+                fontFamily: 'Apercu Pro', 
+              ),
+            ),
+            SizedBox(height: 15),
+            Text(
+              notification.date,
+              style: TextStyle(
+                color: Color(0xFFB4C2D3),
+                fontSize: 12,
+                fontFamily: 'Apercu Pro', 
+              ),
+            ),
+
+            Padding(
+              padding: EdgeInsets.fromLTRB(20,10, 20, 10),
+              child: Divider(
+                height: 1 ,
+                color: Colors.grey[200]
+              ),
+            ),
+          ],
+        ),
+      );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +63,7 @@ class _ProfileState extends State<Profile> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                  Padding(
-                   padding: EdgeInsets.fromLTRB(20, 15, 0, 0),
+                   padding: EdgeInsets.fromLTRB(20, 25, 0, 0),
                    child: Text(
                      'Welcom $name',
                      style: TextStyle(
@@ -33,12 +76,12 @@ class _ProfileState extends State<Profile> {
                  ),
 
                  Padding(
-                   padding: EdgeInsets.fromLTRB(0, 15, 20, 10),
+                   padding: EdgeInsets.fromLTRB(0, 20, 20, 15),
                    child:CircleAvatar(
                    backgroundImage: AssetImage('images/Avatar.png'),
                    maxRadius: 25,
                    minRadius: 25,
-                 ),
+                  ),
                  )
               ],
             ),
@@ -65,14 +108,16 @@ class _ProfileState extends State<Profile> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Padding(
-                   padding: EdgeInsets.fromLTRB(0, 50, 0, 0), 
+                   padding: EdgeInsets.fromLTRB(20, 50, 20, 0), 
                    child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween, 
                     children: <Widget>[
                       RaisedButton(
-                          onPressed: null, 
-                          color: Colors.grey,
-                          elevation: 20.0,
+                          onPressed: (){
+                            print('hh');
+                          }, 
+                          color: Colors.white,
+                          elevation: 10.0,
                           disabledColor: Colors.white,
                           padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
                           shape: RoundedRectangleBorder(
@@ -91,11 +136,13 @@ class _ProfileState extends State<Profile> {
                               ]
                             ),
                         ),
-
+                        SizedBox(width: 12),
                         RaisedButton(
-                          onPressed: null, 
-                          color: Colors.grey,
-                          elevation: 20.0,
+                          onPressed: (){
+                            print('hh');
+                          }, 
+                          color: Colors.white,
+                          elevation: 10.0,
                           disabledColor: Colors.white,
                           padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
                           shape: RoundedRectangleBorder(
@@ -114,11 +161,13 @@ class _ProfileState extends State<Profile> {
                               ]
                             ),
                         ),
-
-                          RaisedButton(
-                          onPressed: null, 
-                          color: Colors.grey,
-                          elevation: 20.0,
+                        SizedBox(width: 12),
+                        RaisedButton(
+                          onPressed: (){
+                            print('hh');
+                          }, 
+                          color: Colors.white,
+                          elevation: 10.0,
                           disabledColor: Colors.white,
                           padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
                           shape: RoundedRectangleBorder(
@@ -140,13 +189,18 @@ class _ProfileState extends State<Profile> {
                     ]
                   ),
                  ),
-                 Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween, 
-                    children: <Widget>[
-                      RaisedButton(
-                          onPressed: null, 
-                          color: Colors.grey,
-                          elevation: 20.0,
+                 SizedBox(height: 12),
+                 Padding(
+                   padding: EdgeInsets.fromLTRB(20, 5, 20, 0), 
+                   child:Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+                     children: <Widget>[
+                       RaisedButton(
+                          onPressed: (){
+                            print('hh');
+                          }, 
+                          color: Colors.white,
+                          elevation: 10.0,
                           disabledColor: Colors.white,
                           padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
                           shape: RoundedRectangleBorder(
@@ -158,18 +212,20 @@ class _ProfileState extends State<Profile> {
                                 SizedBox(height: 10),
                                 Text('Friends',
                                   style: TextStyle(
-                                    color: Color(0xFF096B91),
+                                    color: Color(0xFF946222),
                                     fontSize: 12,
                                   ),
                                 ),
                               ]
                             ),
                         ),
-
+                        SizedBox(width: 12),
                         RaisedButton(
-                          onPressed: null, 
-                          color: Colors.grey,
-                          elevation: 20.0,
+                          onPressed: (){
+                            print('hh');
+                          }, 
+                          color: Colors.white,
+                          elevation: 10.0,
                           disabledColor: Colors.white,
                           padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
                           shape: RoundedRectangleBorder(
@@ -181,19 +237,20 @@ class _ProfileState extends State<Profile> {
                                 SizedBox(height: 10),
                                 Text('Favourites',
                                   style: TextStyle(
-                                    color: Color(0xFF82C6E6),
+                                    color: Color(0xFFFF3B30),
                                     fontSize: 12,
                                   ),
                                 ),
                               ]
                             ),
                         ),
-
-                          RaisedButton(
-                          onPressed: null, 
-                          color: Colors.grey,
-                          elevation: 20.0,
-                          disabledColor: Colors.white,
+                        SizedBox(width: 12),
+                        RaisedButton(
+                          onPressed: (){
+                            print('hh');
+                          }, 
+                          color: Colors.white,
+                          elevation: 10.0,
                           padding: EdgeInsets.symmetric(vertical: 15.0 , horizontal: 10),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0)
@@ -204,7 +261,7 @@ class _ProfileState extends State<Profile> {
                                 SizedBox(height: 10),
                                 Text('Uploads',
                                   style: TextStyle(
-                                    color: Color(0xFF79C8A6),
+                                    color: Color(0xFFFFBD49),
                                     fontSize: 12,
                                   ),
                                 ),
@@ -213,6 +270,52 @@ class _ProfileState extends State<Profile> {
                         ),
                     ]
                   ),
+                 ),
+
+                 SizedBox(height: 40),
+
+                 Divider(
+                   height: 5.0,
+                   color: Colors.grey[200],
+                 ),
+
+                 Padding(
+                   padding: EdgeInsets.fromLTRB(20, 1, 15, 1),
+                   child: Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                     children: <Widget>[
+                       Text(
+                         'Notifications',
+                         style: TextStyle(
+                           color: Colors.green,
+                           fontSize: 16,
+                           fontWeight: FontWeight.bold
+                         ),
+                       ),
+                       
+                       FlatButton(
+                         onPressed: (){
+                           print('Hello');
+                         },                         
+                         child: Text(
+                           'Clear notifications',
+                           style: TextStyle(
+                             fontSize: 12,
+                             fontWeight: FontWeight.bold,
+                             color: Color(0xFFB4C2D3)
+                           ),
+                         ),
+                       ),
+                     ]
+                   ),
+                 ),
+
+                 Padding(
+                   padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
+                   child: Column(
+                      children: notifications.map((e) => wrapNotification(e)).toList(), 
+                   ),
+                 )
                 ]
               ),
             ),
