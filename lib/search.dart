@@ -29,24 +29,15 @@ import 'package:flutter/material.dart';
 
    Widget wrapSetting(String setting){
      return Material(
+            color: Colors.white,
             child: InkWell(
             onTap: (){
               print('Hello');
             },
             splashColor: Colors.grey,
             child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border(
-                  bottom: BorderSide(
-                    color: Color(0x338894A2),
-                    width: 1,
-                  ),
-                ),
-              ),
               child: Padding(
-                padding: EdgeInsets.fromLTRB(10, 15, 10, 15),
+                padding: EdgeInsets.fromLTRB(20, 18, 15, 18),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -78,8 +69,11 @@ import 'package:flutter/material.dart';
          //***** BACKGROUND *****/
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Image.asset(imagePath),
+              Image.asset(imagePath,
+              fit: BoxFit.fitWidth,
+              ),
             ],
           ),
           //***** CONTENT *****/
@@ -203,11 +197,18 @@ import 'package:flutter/material.dart';
                     topRight: Radius.circular(20),
                     ), 
                   ),
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(15, 5, 15, 0),
-                    child: ListView(
-                      children: settings.map((e) => wrapSetting(e)).toList(),
+                  child: ListView.separated(
+                    itemCount: settings.length,
+                    separatorBuilder: (BuildContext context, int index) => Padding(
+                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                      child: Divider(
+                        height: 2,
+                        color: Color(0x668894A2),
                     ),
+                    ),
+                    itemBuilder: (BuildContext context, int index) {
+                      return wrapSetting(settings[index]);
+                    },
                   ),
                 ),
               ),
